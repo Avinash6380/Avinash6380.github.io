@@ -14,17 +14,19 @@ body {
   width: 25%;
   height: 100%;
   background:linear-gradient(90deg, #724ae8, #442c8a 95%);
-  position: absolute;
+  position:fixed;
   left: 0px;
   max-width: 25%;
   max-height: 100%;
   display: flex;
   color: #E3F2FD;
+  z-index: 1;
 }
 .left h1{
   padding: 30px 50px 50px 60px;
   font-size: 50px;
   position: fixed;
+  
 }
 .left h3{
   padding: 30px 50px 50px 60px;
@@ -55,7 +57,9 @@ body {
   bottom: 0;
   height: 100%;
   border-radius: 0;
+  display: block;
   width: 75%;
+  z-index: 0;
   position: fixed;
   background: #fff;
   overflow: hidden;
@@ -184,3 +188,110 @@ header h2 {
   .chatbot header span {
     display: block;
   }
+#grey-messagebox{
+  opacity: 30%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  rotate: -10deg;
+}
+#kite-1{
+  opacity: 40%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  rotate: -10deg;
+}
+
+#flower-pot{
+  opacity: 70%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 49px;
+  right: 5%;
+}
+#flower{
+  opacity: 70%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 30px;
+  right: 2%;
+}
+#letter{
+  opacity: 70%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 10%;
+  right: 2%;
+}
+.menu-line{
+  background-color: whitesmoke;
+  height: 3px;
+  width: 20px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+}
+.menu{
+  display: block;
+  position: absolute;
+  top: 25px;
+  margin: 0px 15px;
+  display: none;
+}
+@media all and (max-width: 640px)
+{
+  .menu{
+    display: block;
+    cursor: pointer;
+
+  }
+  .chatbot{
+    width: 100%;
+  }
+  .left{
+    display: none;
+  }
+  #letter{
+    opacity: 40%;
+  }
+}
+@media all and (max-width: 1280px)
+{
+  .left h1{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+  }
+  .left h3{
+    font-size: 10px;
+    display: flex;
+    margin-top: 45px;
+    padding-left: 40px;
+  }
+}
+@media all and (max-width: 800px)
+{
+  .left h1{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+  }
+  .left h3{
+    font-size: 8px;
+    display: flex;
+    margin-top: 30px;
+    padding-left: 30px;
+  }
+}
+
+.left.active{
+  display: block;
+}
