@@ -14,13 +14,14 @@ body {
   width: 25%;
   height: 100%;
   background:linear-gradient(90deg, #724ae8, #442c8a 95%);
-  position:fixed;
+  position:absolute;
   left: 0px;
   max-width: 90%;
   max-height: 100%;
   display: flex;
   color: #E3F2FD;
   z-index: 1;
+  transition: all 0.5s ease;
 }
 .left h1{
   padding: 30px 50px 50px 60px;
@@ -243,13 +244,13 @@ header h2 {
   top: 25px;
   margin: 0px 15px;
   display: none;
+  z-index: 1;
 }
 @media all and (max-width: 640px)
 {
   .menu{
     display: block;
     cursor: pointer;
-
   }
   .chatbot{
     width: 100%;
@@ -263,7 +264,7 @@ header h2 {
   }
   .left.active{
     display: block;    
-    width: 80%;
+    width: 80%; 
   }
 
 }
@@ -297,4 +298,14 @@ header h2 {
     padding-left: 30px;
   }
 }
-
+.left.active ~ .menu{
+  margin-left: calc(80% + 10px);
+}
+#close-Btn{
+  color: whitesmoke;
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  left: calc(80% + 70px);
+}
