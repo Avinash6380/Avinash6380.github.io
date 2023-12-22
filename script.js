@@ -10,7 +10,7 @@ function logOut(){
 }
 
 let userMessage = null; // Variable to store user's message
-const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
+
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -24,29 +24,31 @@ const createChatLi = (message, className) => {
 }
 
 const generateResponse = (chatElement) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const API_URL = "http://localhost:5005/webhooks/rest/webhook";
     const messageElement = chatElement.querySelector("p");
 
     // Define the properties and message for the API request
     const requestOptions = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: userMessage}],
-        })
+        method: 'POST',
+            body: JSON.stringify({
+                message: userMessage }),
+            mode: 'cors',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'charset':'UTF-8'
+            },
     }
 
     // Send POST request to API, get response and set the reponse as paragraph text
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
-        messageElement.textContent = data.choices[0].message.content.trim();
+        console.log(data);
+        messageElement.textContent = data[0].text;
+        console.log(userMessage)
     }).catch(() => {
-        messageElement.classList.add("error");
-        messageElement.textContent = "Oops! Something went wrong. Please try again.";
-    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+         messageElement.classList.add("error");
+         messageElement.textContent = "Oops! Something went wrong. Please try again.";
+     }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
 
 const handleChat = () => {
@@ -85,6 +87,12 @@ chatInput.addEventListener("keydown", (e) => {
     }
 });
 
-// sendChatBtn.addEventListener("click", handleChat);
-// closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-// chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+//<-------------------Responsive Menu------------------->
+
+let menu = document.querySelector('.menu');
+let leftList = document.querySelector('.left');
+
+menu.onclick = function() {
+    leftList.classList.toggle('active');
+
+}
