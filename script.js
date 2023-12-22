@@ -71,7 +71,9 @@ const handleChat = () => {
         generateResponse(incomingChatLi);
     }, 600);
 }
-
+sendChatBtn.onclick = function(){
+    handleChat();
+}
 chatInput.addEventListener("input", () => {
     // Adjust the height of the input textarea based on its content
     chatInput.style.height = `${inputInitHeight}px`;
