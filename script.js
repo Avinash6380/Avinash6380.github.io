@@ -97,6 +97,7 @@ let closeBtn = document.querySelector('#close-Btn');
 
 menu.onclick = function() {
     leftList.classList.add('active');
+
     //leftList.classList.toggle('active');
     console.log(leftList)
 }
@@ -104,3 +105,7 @@ closeBtn.onclick = function () {
     leftList.classList.remove('active');
     console.log(leftList);
 }
+// let rightArea = document.querySelector('chatbot')
+// menu.onclick = function(){
+    
+// }
