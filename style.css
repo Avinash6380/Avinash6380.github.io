@@ -16,7 +16,7 @@ body {
   background:linear-gradient(90deg, #724ae8, #442c8a 95%);
   position:fixed;
   left: 0px;
-  max-width: 25%;
+  max-width: 90%;
   max-height: 100%;
   display: flex;
   color: #E3F2FD;
@@ -256,10 +256,16 @@ header h2 {
   }
   .left{
     display: none;
+    width: 40%;
   }
   #letter{
     opacity: 40%;
   }
+  .left.active{
+    display: block;    
+    width: 80%;
+  }
+
 }
 @media all and (max-width: 1280px)
 {
@@ -292,6 +298,3 @@ header h2 {
   }
 }
 
-.left.active{
-  display: block;
-}
