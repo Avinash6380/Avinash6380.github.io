@@ -1,5 +1,4 @@
 const chatbotToggler = document.querySelector(".chatbot-toggler");
-const closeBtn = document.querySelector(".close-btn");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
@@ -74,6 +73,7 @@ const handleChat = () => {
 sendChatBtn.onclick = function(){
     handleChat();
 }
+
 chatInput.addEventListener("input", () => {
     // Adjust the height of the input textarea based on its content
     chatInput.style.height = `${inputInitHeight}px`;
@@ -93,8 +93,14 @@ chatInput.addEventListener("keydown", (e) => {
 
 let menu = document.querySelector('.menu');
 let leftList = document.querySelector('.left');
+let closeBtn = document.querySelector('#close-Btn');
 
 menu.onclick = function() {
-    leftList.classList.toggle('active');
-
+    leftList.classList.add('active');
+    //leftList.classList.toggle('active');
+    console.log(leftList)
+}
+closeBtn.onclick = function () {
+    leftList.classList.remove('active');
+    console.log(leftList);
 }
