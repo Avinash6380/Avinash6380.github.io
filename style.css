@@ -283,9 +283,11 @@ header h2 {
   .left.active{
     display: block;    
     width: 80%; 
+    box-shadow: 0 0 0 150px rgba(0,0,0,0.30);
   }
   #close-Btn{
     visibility: visible;
+    transition: all 0.5s ease;
   }
   .left h1{
     padding: 30px 50px 50px 40px;
@@ -318,8 +320,10 @@ header h2 {
 /*-----------Welcome Message------------*/
 .notif {
   margin: 10px;
-  position: fixed;
-  left: 50%;
+  position: absolute;
+  justify-content: center;
+  left: 40%;
+  top: 60px;
   padding: 10px;
   background: #fff;
   border-radius: 5px;
