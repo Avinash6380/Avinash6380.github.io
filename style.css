@@ -322,8 +322,8 @@ header h2 {
   margin: 10px;
   position: absolute;
   justify-content: center;
-  left: 40%;
-  top: 60px;
+  left: 0;
+  bottom: 60px;
   padding: 10px;
   background: #fff;
   border-radius: 5px;
